@@ -19,10 +19,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.0'
   spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'test-unit', '~> 2.5'
-  spec.add_development_dependency 'mocha', '~> 0.11.0' # With mocha 0.12 we get: undefined method `run' for #<StateMachineMachineTest:0x94918b8> (NoMethodError)
   spec.add_development_dependency 'random_data'
   spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'activerecord', ['>= 3.0', '<= 4.0']
   spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'minitest'
 end
