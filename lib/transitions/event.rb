@@ -36,12 +36,11 @@ module Transitions
       next_state = nil
       transitions.each do |transition|
         next if to_state && !Array(transition.to).include?(to_state)
-        if transition.executable?(obj, *args)
-          next_state = to_state || Array(transition.to).first
-          transition.execute(obj, *args)
-          update_event_timestamp(obj, next_state) if timestamp_defined?
-          break
-        end
+        transition.perform_guards!(obj, *args)
+        next_state = to_state || Array(transition.to).first
+        transition.execute(obj, *args)
+        update_event_timestamp(obj, next_state) if timestamp_defined?
+        break
       end
       # Update timestamps on obj if a timestamp has been defined
       next_state

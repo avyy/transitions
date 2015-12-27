@@ -6,6 +6,7 @@ require 'active_model/transitions'
 
 require 'mocha'
 require 'random_data'
+require 'pry-byebug'
 
 def db_defaults!
   ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')

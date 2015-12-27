@@ -91,3 +91,6 @@ Style/OpMethod:
 
 Documentation:
   Enabled: false
+
+Style/RescueModifier:
+  Enabled: false

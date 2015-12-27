@@ -53,7 +53,7 @@ class TestStateTransitionGuardCheck < Test::Unit::TestCase
     st.executable?(obj, *args)
   end
 
-  test 'should call the method on the object if guard is a symbol' do
+  test 'should call the methods on the object if guard is a list of symbols' do
     opts = { from: 'foo', to: 'bar', guard: [:test_guard, :test_another_guard] }
     st = Transitions::StateTransition.new(opts)
 

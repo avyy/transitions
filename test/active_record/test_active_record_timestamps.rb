@@ -85,7 +85,7 @@ class TestActiveRecordTimestamps < Test::Unit::TestCase
   test 'moving to paid should not set paid_at if our guard evaluates to false' do
     @order = create_order(:placed)
     @order.update_attribute :allow_transition, false
-    @order.pay!
+    @order.pay! rescue Transitions::GuardFailure
     @order.reload
     assert_nil @order.paid_at
   end
